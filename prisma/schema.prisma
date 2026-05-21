@@ -1,0 +1,104 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Patient {
+  id             Int               @id @default(autoincrement())
+  fullName       String
+  documentNumber String            @unique
+  age            Int
+  city           String
+  policies       PatientPolicy[]
+  estimations    CopayEstimation[]
+  sessions       ChatSession[]
+}
+
+model InsurancePlan {
+  id            Int             @id @default(autoincrement())
+  name          String
+  deductible    Decimal         @db.Decimal(10, 2)
+  policies      PatientPolicy[]
+  coverageRules CoverageRule[]
+}
+
+model PatientPolicy {
+  id        Int       @id @default(autoincrement())
+  patientId Int
+  planId    Int
+  status    String
+  startDate DateTime
+  endDate   DateTime?
+  patient   Patient       @relation(fields: [patientId], references: [id])
+  plan      InsurancePlan @relation(fields: [planId], references: [id])
+}
+
+model Specialty {
+  id                  Int                 @id @default(autoincrement())
+  name                String
+  slug                String              @unique
+  keywords            String              @db.Text
+  coverageRules       CoverageRule[]
+  hospitalSpecialties HospitalSpecialty[]
+}
+
+model Hospital {
+  id                    Int                 @id @default(autoincrement())
+  name                  String
+  city                  String
+  baseConsultationPrice Decimal             @db.Decimal(10, 2)
+  networkLevel          String
+  hospitalSpecialties   HospitalSpecialty[]
+  estimations           CopayEstimation[]
+}
+
+model HospitalSpecialty {
+  id          Int       @id @default(autoincrement())
+  hospitalId  Int
+  specialtyId Int
+  active      Boolean   @default(true)
+  hospital    Hospital  @relation(fields: [hospitalId], references: [id])
+  specialty   Specialty @relation(fields: [specialtyId], references: [id])
+}
+
+model CoverageRule {
+  id              Int           @id @default(autoincrement())
+  planId          Int
+  specialtyId     Int
+  coveragePercent Int
+  fixedCopay      Decimal?      @db.Decimal(10, 2)
+  plan            InsurancePlan @relation(fields: [planId], references: [id])
+  specialty       Specialty     @relation(fields: [specialtyId], references: [id])
+}
+
+model CopayEstimation {
+  id          Int      @id @default(autoincrement())
+  patientId   Int
+  hospitalId  Int
+  specialtyId Int
+  amount      Decimal  @db.Decimal(10, 2)
+  createdAt   DateTime @default(now())
+  patient     Patient  @relation(fields: [patientId], references: [id])
+  hospital    Hospital @relation(fields: [hospitalId], references: [id])
+}
+
+model ChatSession {
+  id        Int           @id @default(autoincrement())
+  patientId Int
+  createdAt DateTime      @default(now())
+  patient   Patient       @relation(fields: [patientId], references: [id])
+  messages  ChatMessage[]
+}
+
+model ChatMessage {
+  id        Int         @id @default(autoincrement())
+  sessionId Int
+  role      String
+  content   String      @db.Text
+  createdAt DateTime    @default(now())
+  session   ChatSession @relation(fields: [sessionId], references: [id])
+}
