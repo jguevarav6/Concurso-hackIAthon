@@ -26,3 +26,4 @@ Nota: el contenido del skill se mantiene en ingles, pero Codex debe responder al
 - Se creo el esqueleto real de archivos del proyecto: configuracion Next.js, TailwindCSS, Prisma, rutas API, componentes, agentes, servicios y tipos.
 - Validacion: revision de estructura con listado de archivos; no se instalaron dependencias ni se ejecuto build.
 - Se agregaron estandares UI/UX al skill: librerias modernas cuando aporten valor, diseno claro, colores luminosos, orden visual, responsividad movil/escritorio, accesibilidad y manejo de estados.
+- Se agrego la regla de mergear ramas completas a `main` antes de desplegar y desplegar siempre desde `main`.

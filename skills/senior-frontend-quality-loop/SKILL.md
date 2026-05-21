@@ -50,6 +50,8 @@ Use this skill to run frontend work as a quality loop, not a one-pass edit. It i
 - Do not claim verification results unless the commands were actually run.
 - Use a different Git branch for each meaningful commit or task.
 - Do not commit directly on `main` unless the user explicitly requests it.
+- Merge completed task branches into `main` before deployment.
+- Always deploy from `main`, not from temporary feature branches.
 
 ## UI/UX Standards
 
