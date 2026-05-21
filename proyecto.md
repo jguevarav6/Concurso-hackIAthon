@@ -1128,8 +1128,8 @@ Criterio de aceptacion:
 
 | Tarea | Estado | Rama | Notas |
 | --- | --- | --- | --- |
-| FE-01 Base visual y layout general | Pendiente | `frontend/base-layout` | Siguiente tarea recomendada |
-| FE-02 Hero moderno | Pendiente | `frontend/hero-section` | Depende de FE-01 |
+| FE-01 Base visual y layout general | Completado | `frontend/base-layout` | Layout responsive base creado para mobile y desktop |
+| FE-02 Hero moderno | Pendiente | `frontend/hero-section` | Siguiente tarea recomendada |
 | FE-03 Selector de paciente demo | Pendiente | `frontend/patient-selector` | Puede hacerse en paralelo con FE-04 |
 | FE-04 Chat UI | Pendiente | `frontend/chat-ui` | Prioridad alta |
 | FE-05 Panel de cobertura | Pendiente | `frontend/coverage-panel` | Prioridad alta |

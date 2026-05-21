@@ -19,3 +19,4 @@
 - Se dejo de ignorar `skills/` para que otros programadores tambien puedan usar las reglas locales del proyecto.
 - Se agrego en `proyecto.md` el avance real del proyecto y el plan frontend dividido en tareas pequenas FE-01 a FE-10.
 - Validacion: `npm.cmd run build` paso correctamente.
+- Se completo FE-01 en la rama `frontend/base-layout`: layout responsive base, hero estructural, panel demo, sidebar sticky en desktop, orden mobile, tarjetas consistentes y estados visuales iniciales.
