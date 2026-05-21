@@ -11,3 +11,8 @@
 - Se corrigio `next.config.ts` a `next.config.mjs` porque Next.js 14 no soporta config TypeScript.
 - Verificacion: `npm.cmd run lint` y `npm.cmd run build` pasaron correctamente.
 - Se ejecuto `npm.cmd audit --omit=dev`; reporto vulnerabilidades en `next` y `postcss`. No se aplico `npm audit fix --force` porque propone un salto mayor a Next 16.
+- Se desplego la app en Vercel.
+- URL de produccion: `https://concurso-psi.vercel.app`.
+- URL tecnica del despliegue: `https://concurso-306f9ga10-jguevarav6s-projects.vercel.app`.
+- Validacion: Vercel ejecuto build correctamente y la URL de produccion respondio HTTP 200.
+- Nota: Vercel no pudo conectar automaticamente el repositorio de GitHub al proyecto, pero el despliegue manual quedo activo.
