@@ -18,3 +18,4 @@
 - Nota: Vercel no pudo conectar automaticamente el repositorio de GitHub al proyecto, pero el despliegue manual quedo activo.
 - Se actualizo `README.md` para que otros programadores puedan clonar, instalar, configurar variables, correr Prisma, ejecutar localmente, verificar y desplegar el proyecto.
 - Se agrego al skill local la regla de usar una rama diferente por cada commit o tarea significativa.
+- Se simplifico `README.md` para dejar solo descripcion, stack, requisitos, instalacion, variables, base de datos, ejecucion local, verificacion y deploy.
