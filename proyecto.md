@@ -938,3 +938,203 @@ La solucion implementa un agente conversacional que analiza sintomas, recomienda
 Saludos,
 [Nombre 1] y [Nombre 2]
 ```
+
+## 27. Avance real del proyecto
+
+### Estado actual
+
+- Repositorio GitHub: `https://github.com/jguevarav6/Concurso-hackIAthon`
+- Deploy Vercel: `https://concurso-psi.vercel.app`
+- Arquitectura base creada.
+- Estructura Next.js, TailwindCSS, Prisma, componentes, rutas API, agentes internos, servicios y tipos creada.
+- README corto de instalacion creado.
+- Build actual funcionando.
+
+### Regla de trabajo
+
+- Cada tarea significativa debe hacerse en una rama diferente.
+- No trabajar directo sobre `main` salvo instruccion explicita.
+- Registrar avances importantes en este archivo.
+- Mantener `development.md` como bitacora breve del proyecto.
+
+## 28. Plan frontend por tareas pequenas
+
+El objetivo de esta fase es construir solo el frontend, sin implementar todavia la logica real de backend/MySQL/OpenAI.
+
+### Tarea FE-01: Base visual y layout general
+
+Rama sugerida: `frontend/base-layout`
+
+Alcance:
+
+- Revisar `src/app/page.tsx`.
+- Definir estructura responsive principal.
+- Crear layout desktop con hero, demo, resultados y secciones inferiores.
+- Crear layout mobile con orden claro: hero, selector, chat, resultados, ranking y flujo.
+- Mantener TailwindCSS como sistema de estilos.
+
+Criterio de aceptacion:
+
+- La pagina se ve ordenada en mobile y desktop.
+- No hay solapamientos ni textos cortados.
+- `npm run build` pasa.
+
+### Tarea FE-02: Hero moderno
+
+Rama sugerida: `frontend/hero-section`
+
+Alcance:
+
+- Mejorar `Hero.tsx`.
+- Usar copy breve y claro.
+- Agregar CTA visual hacia la demo.
+- Aplicar colores claros, jerarquia tipografica y buen espaciado.
+
+Criterio de aceptacion:
+
+- El primer viewport comunica rapidamente que hace Copago AI.
+- El diseno se ve moderno sin parecer dashboard pesado.
+- Funciona bien en mobile.
+
+### Tarea FE-03: Selector de paciente demo
+
+Rama sugerida: `frontend/patient-selector`
+
+Alcance:
+
+- Mejorar `PatientSelector.tsx`.
+- Mostrar informacion util del paciente demo.
+- Preparar estado visual para loading/error cuando se conecte al backend.
+- Mantener API futura compatible con `GET /api/patients`.
+
+Criterio de aceptacion:
+
+- El selector es claro, accesible y responsive.
+- Se entiende que son pacientes demo.
+
+### Tarea FE-04: Chat UI
+
+Rama sugerida: `frontend/chat-ui`
+
+Alcance:
+
+- Mejorar `ChatBox.tsx`.
+- Mejorar `MessageBubble.tsx`.
+- Mejorar `ExamplePrompts.tsx`.
+- Crear estados visuales: inicial, escribiendo, loading, error y exito simulado.
+- Preparar conexion futura a `POST /api/chat`.
+
+Criterio de aceptacion:
+
+- El chat se siente usable y claro.
+- El input, boton y ejemplos funcionan visualmente en mobile y desktop.
+- No se calcula nada en frontend.
+
+### Tarea FE-05: Panel de cobertura
+
+Rama sugerida: `frontend/coverage-panel`
+
+Alcance:
+
+- Mejorar `CoveragePanel.tsx`.
+- Mostrar plan, cobertura, deducible, copago estimado y disclaimer.
+- Preparar estados: sin estimacion, con cobertura, sin cobertura y error.
+
+Criterio de aceptacion:
+
+- La informacion financiera se lee rapido.
+- El copago se presenta como estimado.
+- El panel no se rompe con valores largos.
+
+### Tarea FE-06: Ranking de hospitales
+
+Rama sugerida: `frontend/hospital-ranking`
+
+Alcance:
+
+- Mejorar `HospitalCard.tsx`.
+- Mejorar `HospitalRanking.tsx`.
+- Mostrar hospital recomendado, ciudad, nivel de red, precio base y copago.
+- Preparar estado vacio.
+
+Criterio de aceptacion:
+
+- El hospital recomendado destaca sin saturar la pantalla.
+- El ranking es legible en mobile.
+
+### Tarea FE-07: Trazabilidad de subagentes
+
+Rama sugerida: `frontend/agent-trace`
+
+Alcance:
+
+- Mejorar `AgentTrace.tsx`.
+- Mostrar pasos del flujo: sintomas, cobertura, copago, recomendacion y respuesta.
+- Usar estados visuales: pendiente, activo y completado.
+
+Criterio de aceptacion:
+
+- El evaluador entiende que hay automatizacion por subagentes.
+- El componente se mantiene simple y claro.
+
+### Tarea FE-08: Secciones informativas
+
+Rama sugerida: `frontend/info-sections`
+
+Alcance:
+
+- Mejorar `HowItWorks.tsx`.
+- Mejorar `TechnicalSummary.tsx`.
+- Explicar flujo y stack sin mucho texto.
+- Mantener diseno moderno, claro y responsive.
+
+Criterio de aceptacion:
+
+- Las secciones ayudan al evaluador sin distraer de la demo.
+- No parecen una landing generica.
+
+### Tarea FE-09: Integracion visual con datos mock
+
+Rama sugerida: `frontend/mock-state-integration`
+
+Alcance:
+
+- Crear estado local mock para simular respuesta del agente.
+- Conectar visualmente chat, cobertura, ranking y trazabilidad.
+- Mantener contratos compatibles con `src/types/agent.ts`.
+
+Criterio de aceptacion:
+
+- La demo se puede recorrer visualmente sin backend real.
+- Los datos mock son coherentes con el reto.
+
+### Tarea FE-10: QA responsive y accesibilidad
+
+Rama sugerida: `frontend/responsive-a11y-qa`
+
+Alcance:
+
+- Revisar mobile, tablet y desktop.
+- Revisar labels, contraste, focus visible, botones, inputs y estructura semantica.
+- Ajustar espaciados, tamanos y overflow.
+
+Criterio de aceptacion:
+
+- No hay textos superpuestos.
+- Los controles son usables en mobile.
+- `npm run lint` y `npm run build` pasan.
+
+### Avance frontend
+
+| Tarea | Estado | Rama | Notas |
+| --- | --- | --- | --- |
+| FE-01 Base visual y layout general | Pendiente | `frontend/base-layout` | Siguiente tarea recomendada |
+| FE-02 Hero moderno | Pendiente | `frontend/hero-section` | Depende de FE-01 |
+| FE-03 Selector de paciente demo | Pendiente | `frontend/patient-selector` | Puede hacerse en paralelo con FE-04 |
+| FE-04 Chat UI | Pendiente | `frontend/chat-ui` | Prioridad alta |
+| FE-05 Panel de cobertura | Pendiente | `frontend/coverage-panel` | Prioridad alta |
+| FE-06 Ranking de hospitales | Pendiente | `frontend/hospital-ranking` | Prioridad alta |
+| FE-07 Trazabilidad de subagentes | Pendiente | `frontend/agent-trace` | Importante para el reto |
+| FE-08 Secciones informativas | Pendiente | `frontend/info-sections` | Pulido de presentacion |
+| FE-09 Integracion visual con datos mock | Pendiente | `frontend/mock-state-integration` | Une toda la demo frontend |
+| FE-10 QA responsive y accesibilidad | Pendiente | `frontend/responsive-a11y-qa` | Cierre de frontend |

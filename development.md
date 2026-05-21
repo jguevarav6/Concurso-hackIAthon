@@ -16,3 +16,6 @@
 - URL tecnica del despliegue: `https://concurso-306f9ga10-jguevarav6s-projects.vercel.app`.
 - Validacion: Vercel ejecuto build correctamente y la URL de produccion respondio HTTP 200.
 - Nota: Vercel no pudo conectar automaticamente el repositorio de GitHub al proyecto, pero el despliegue manual quedo activo.
+- Se dejo de ignorar `skills/` para que otros programadores tambien puedan usar las reglas locales del proyecto.
+- Se agrego en `proyecto.md` el avance real del proyecto y el plan frontend dividido en tareas pequenas FE-01 a FE-10.
+- Validacion: `npm.cmd run build` paso correctamente.

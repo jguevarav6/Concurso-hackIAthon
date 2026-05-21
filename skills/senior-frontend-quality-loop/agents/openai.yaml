@@ -1,0 +1,4 @@
+interface:
+  display_name: "Senior Frontend Quality Loop"
+  short_description: "Frontend implementation and QA loop"
+  default_prompt: "Use $senior-frontend-quality-loop to implement and verify a frontend change with quality reviews."
