@@ -24,3 +24,5 @@
 - Validacion: `npm.cmd run build` paso correctamente.
 - Se completo FE-01 en la rama `frontend/base-layout`: layout responsive base, hero estructural, panel demo, sidebar sticky en desktop, orden mobile, tarjetas consistentes y estados visuales iniciales.
 - Se completo FE-02 en la rama `frontend/hero-section`: hero moderno con CTA principal, enlace al flujo tecnico, senales de valor y panel compacto de estado de demo.
+- Se completo el frontend en la rama `frontend/complete-demo-ui`: selector de pacientes, chat funcional, ejemplos de sintomas, loading, respuesta mock, cobertura, ranking, trazabilidad, secciones informativas y QA responsive inicial.
+- Validacion frontend: `npm.cmd run lint` y `npm.cmd run build` pasaron correctamente.

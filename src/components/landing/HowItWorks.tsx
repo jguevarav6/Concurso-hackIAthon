@@ -1,9 +1,24 @@
 const steps = [
-  "Clasifica sintomas",
-  "Consulta cobertura",
-  "Calcula copago",
-  "Ordena hospitales",
-  "Compone respuesta"
+  {
+    title: "Clasifica sintomas",
+    detail: "Sugiere especialidad y urgencia sin diagnosticar."
+  },
+  {
+    title: "Consulta cobertura",
+    detail: "Cruza paciente, poliza y regla del plan."
+  },
+  {
+    title: "Calcula copago",
+    detail: "Aplica una formula deterministica en backend."
+  },
+  {
+    title: "Ordena hospitales",
+    detail: "Prioriza menor copago dentro de la red."
+  },
+  {
+    title: "Compone respuesta",
+    detail: "Entrega una orientacion administrativa clara."
+  }
 ];
 
 export function HowItWorks() {
@@ -22,11 +37,12 @@ export function HowItWorks() {
       </div>
       <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {steps.map((step, index) => (
-          <div key={step} className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm">
+          <div key={step.title} className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm">
             <span className="mb-3 inline-flex size-7 items-center justify-center rounded-full bg-emerald-50 text-xs font-semibold text-clinical">
               {index + 1}
             </span>
-            {step}
+            <h3 className="font-semibold text-ink">{step.title}</h3>
+            <p className="mt-2 text-xs leading-5 text-slate-600">{step.detail}</p>
           </div>
         ))}
       </div>

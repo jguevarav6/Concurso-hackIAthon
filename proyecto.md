@@ -1130,11 +1130,11 @@ Criterio de aceptacion:
 | --- | --- | --- | --- |
 | FE-01 Base visual y layout general | Completado | `frontend/base-layout` | Layout responsive base creado para mobile y desktop |
 | FE-02 Hero moderno | Completado | `frontend/hero-section` | Hero con CTA, senales de valor y panel de estado |
-| FE-03 Selector de paciente demo | Pendiente | `frontend/patient-selector` | Puede hacerse en paralelo con FE-04 |
-| FE-04 Chat UI | Pendiente | `frontend/chat-ui` | Prioridad alta |
-| FE-05 Panel de cobertura | Pendiente | `frontend/coverage-panel` | Prioridad alta |
-| FE-06 Ranking de hospitales | Pendiente | `frontend/hospital-ranking` | Prioridad alta |
-| FE-07 Trazabilidad de subagentes | Pendiente | `frontend/agent-trace` | Importante para el reto |
-| FE-08 Secciones informativas | Pendiente | `frontend/info-sections` | Pulido de presentacion |
-| FE-09 Integracion visual con datos mock | Pendiente | `frontend/mock-state-integration` | Une toda la demo frontend |
-| FE-10 QA responsive y accesibilidad | Pendiente | `frontend/responsive-a11y-qa` | Cierre de frontend |
+| FE-03 Selector de paciente demo | Completado | `frontend/complete-demo-ui` | Selector funcional con datos mock de pacientes |
+| FE-04 Chat UI | Completado | `frontend/complete-demo-ui` | Chat funcional con input, ejemplos, loading y mensajes |
+| FE-05 Panel de cobertura | Completado | `frontend/complete-demo-ui` | Panel conectado a respuesta mock con plan, cobertura y deducible |
+| FE-06 Ranking de hospitales | Completado | `frontend/complete-demo-ui` | Ranking mock con hospital recomendado y copagos |
+| FE-07 Trazabilidad de subagentes | Completado | `frontend/complete-demo-ui` | Pasos visuales con estados pendiente/completado |
+| FE-08 Secciones informativas | Completado | `frontend/complete-demo-ui` | Flujo y resumen tecnico mejorados |
+| FE-09 Integracion visual con datos mock | Completado | `frontend/complete-demo-ui` | Demo frontend conectada con estado local mock |
+| FE-10 QA responsive y accesibilidad | Completado | `frontend/complete-demo-ui` | `npm run lint` y `npm run build` pasaron |
