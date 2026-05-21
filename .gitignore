@@ -7,6 +7,5 @@ out
 dist
 coverage
 *.log
-skills/
 
 .vercel

@@ -19,3 +19,7 @@
 - Se actualizo `README.md` para que otros programadores puedan clonar, instalar, configurar variables, correr Prisma, ejecutar localmente, verificar y desplegar el proyecto.
 - Se agrego al skill local la regla de usar una rama diferente por cada commit o tarea significativa.
 - Se simplifico `README.md` para dejar solo descripcion, stack, requisitos, instalacion, variables, base de datos, ejecucion local, verificacion y deploy.
+- Se dejo de ignorar `skills/` para que otros programadores tambien puedan usar las reglas locales del proyecto.
+- Se agrego en `proyecto.md` el avance real del proyecto y el plan frontend dividido en tareas pequenas FE-01 a FE-10.
+- Validacion: `npm.cmd run build` paso correctamente.
+- Se completo FE-01 en la rama `frontend/base-layout`: layout responsive base, hero estructural, panel demo, sidebar sticky en desktop, orden mobile, tarjetas consistentes y estados visuales iniciales.

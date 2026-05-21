@@ -9,20 +9,30 @@ import { HospitalRanking } from "@/components/results/HospitalRanking";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f7faf8]">
-      <Hero />
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 py-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(320px,0.9fr)]">
-        <div className="space-y-4">
+    <main className="min-h-screen overflow-x-hidden bg-[#f5f8f7] text-ink">
+      <div className="border-b border-slate-200/80 bg-white/75 backdrop-blur">
+        <Hero />
+      </div>
+
+      <section
+        id="demo"
+        className="mx-auto grid w-full max-w-7xl gap-5 px-4 py-6 sm:px-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.85fr)] lg:gap-6 lg:py-8"
+      >
+        <div className="min-w-0 space-y-5">
           <PatientSelector />
           <ChatBox />
         </div>
-        <aside className="space-y-4">
+
+        <aside className="min-w-0 space-y-5 lg:sticky lg:top-6 lg:self-start">
           <CoveragePanel />
           <HospitalRanking />
           <AgentTrace />
         </aside>
       </section>
-      <HowItWorks />
+
+      <div className="border-t border-slate-200/80 bg-white">
+        <HowItWorks />
+      </div>
       <TechnicalSummary />
     </main>
   );
