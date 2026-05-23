@@ -26,3 +26,15 @@
 - Se completo FE-02 en la rama `frontend/hero-section`: hero moderno con CTA principal, enlace al flujo tecnico, senales de valor y panel compacto de estado de demo.
 - Se completo el frontend en la rama `frontend/complete-demo-ui`: selector de pacientes, chat funcional, ejemplos de sintomas, loading, respuesta mock, cobertura, ranking, trazabilidad, secciones informativas y QA responsive inicial.
 - Validacion frontend: `npm.cmd run lint` y `npm.cmd run build` pasaron correctamente.
+
+## 2026-05-22
+
+- Se integró Gemini como motor de IA en reemplazo del mock estático (`buildMockResponse`).
+- Se instaló `@google/genai` (SDK oficial) y se reescribió `src/lib/gemini.ts` usando `ai.models.generateContent`.
+- Se agregaron `GEMINI_API_KEY` y `GEMINI_MODEL` a `.env`; el modelo se configura sin tocar código.
+- Se implementó el pipeline completo en `src/app/api/chat/route.ts`: `symptomAgent` → cobertura → ranking de hospitales → Gemini genera el reply.
+- `DemoExperience.tsx` ahora llama a `POST /api/chat` en lugar de `buildMockResponse` en el navegador.
+- Se eliminó `buildMockResponse` de `src/lib/mock/demoData.ts`; el resto del archivo (pacientes, trazas, prompts) se mantiene.
+- `symptomAgent` retorna `specialtySlug: "none"` para mensajes no médicos; el route responde con un saludo conversacional sin ejecutar el pipeline médico.
+- Se añadió `systemInstruction` a Gemini con la identidad "Copago AI" y las reglas de comportamiento administrativo.
+- Se renombró `runDemo` → `sendPatientMessage` en `DemoExperience.tsx` para mayor claridad.

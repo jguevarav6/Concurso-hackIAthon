@@ -8,7 +8,6 @@ import { CoveragePanel } from "@/components/results/CoveragePanel";
 import { HospitalRanking } from "@/components/results/HospitalRanking";
 import {
   buildCompletedTrace,
-  buildMockResponse,
   demoPatients,
   emptyTrace,
   initialMessages,
@@ -26,27 +25,37 @@ export function DemoExperience() {
   const selectedPatient =
     demoPatients.find((patient) => patient.id === selectedPatientId) ?? demoPatients[0];
 
-  function runDemo(message: string) {
+  async function sendPatientMessage(message: string) {
     const trimmed = message.trim();
-
-    if (trimmed.length < 5) {
-      return;
-    }
+    if (trimmed.length < 5) return;
 
     setIsLoading(true);
     setInputValue("");
+    setMessages((current) => [
+      ...current,
+      { id: `user-${Date.now()}`, role: "user", content: trimmed },
+    ]);
 
-    window.setTimeout(() => {
-      const mockResponse = buildMockResponse(trimmed, selectedPatient);
-
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ patientId: selectedPatient.id, message: trimmed }),
+      });
+      const data: AgentResponse = await res.json();
       setMessages((current) => [
         ...current,
-        { id: `user-${Date.now()}`, role: "user", content: trimmed },
-        { id: `assistant-${Date.now()}`, role: "assistant", content: mockResponse.reply }
+        { id: `assistant-${Date.now()}`, role: "assistant", content: data.reply },
       ]);
-      setResponse(mockResponse);
+      setResponse(data);
+    } catch {
+      setMessages((current) => [
+        ...current,
+        { id: `error-${Date.now()}`, role: "assistant", content: "Error al procesar la solicitud. Intenta de nuevo." },
+      ]);
+    } finally {
       setIsLoading(false);
-    }, 450);
+    }
   }
 
   return (
@@ -65,8 +74,8 @@ export function DemoExperience() {
           isLoading={isLoading}
           messages={messages}
           onInputChange={setInputValue}
-          onPromptSelect={runDemo}
-          onSubmit={runDemo}
+          onPromptSelect={sendPatientMessage}
+          onSubmit={sendPatientMessage}
         />
       </div>
 
