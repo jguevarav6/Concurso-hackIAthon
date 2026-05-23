@@ -13,6 +13,7 @@
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
+    "@google/genai": "^2.6.0",
     "@prisma/client": "^5.22.0",
     "lucide-react": "^0.468.0",
     "mysql2": "^3.11.5",

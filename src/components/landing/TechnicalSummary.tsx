@@ -1,4 +1,4 @@
-const stack = ["Next.js", "React", "TypeScript", "TailwindCSS", "Prisma", "MySQL", "OpenAI", "Vercel"];
+const stack = ["Next.js", "React", "TypeScript", "TailwindCSS", "Prisma", "MySQL", "Gemini AI", "Vercel"];
 
 export function TechnicalSummary() {
   return (

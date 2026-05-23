@@ -33,7 +33,7 @@ function classifyByKeywords(message: string): SymptomClassification {
     return { specialtySlug: "gastroenterologia", urgencyLevel: "low", reasoning: "Sintomas digestivos" };
   }
 
-  return { specialtySlug: "emergencias", urgencyLevel: "medium", reasoning: "Sintomas ambiguos" };
+  return { specialtySlug: "none", urgencyLevel: "low", reasoning: "Mensaje no medico" };
 }
 
 function matches(text: string, keywords: string[]) {
