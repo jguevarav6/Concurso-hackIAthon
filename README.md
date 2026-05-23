@@ -44,7 +44,8 @@ Crear `.env.local` en la raiz:
 
 ```bash
 DATABASE_URL="mysql://USER:PASSWORD@HOST:3306/copago_agent"
-OPENAI_API_KEY="sk-..."
+GEMINI_API_KEY="your-gemini-api-key"
+GEMINI_MODEL="gemini-3.5-flash"
 NEXT_PUBLIC_APP_NAME="Copago AI"
 ```
 
