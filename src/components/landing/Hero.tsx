@@ -29,7 +29,7 @@ export function Hero() {
         </div>
 
         <div className="mt-7 grid gap-3 sm:grid-cols-3">
-          {["MySQL real", "Copago deterministico", "Fallback sin IA"].map((item) => (
+          {["MySQL real", "Copago deterministico", "Respuestas con Gemini"].map((item) => (
             <div key={item} className="rounded-lg border border-slate-200 bg-white/80 px-4 py-3 shadow-sm">
               <p className="text-sm font-semibold text-ink">{item}</p>
             </div>
